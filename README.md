@@ -1,16 +1,73 @@
-# widgetbook_golden_test
+# Widgetbook Golden Test プロジェクト
 
-A new Flutter project.
+## 概要
 
-## Getting Started
+このプロジェクトは、Flutter アプリケーションの UI コンポーネントをテストするための環境を提供します。Widgetbook と Alchemist を使用して、UI コンポーネントのビジュアルテスト（ゴールデンテスト）を実行できます。
 
-This project is a starting point for a Flutter application.
+## 主な機能
 
-A few resources to get you started if this is your first Flutter project:
+- Widgetbook を使用した UI コンポーネントのカタログ化
+- Alchemist を使用したビジュアルテスト（ゴールデンテスト）の実行
+- FVM (Flutter Version Management) による Flutter SDK バージョン管理
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## セットアップ方法
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. FVM のインストール:
+
+```bash
+brew tap leoafarias/fvm
+brew install fvm
+```
+
+2. プロジェクトの Flutter バージョンをインストール:
+
+```bash
+fvm install --setup
+```
+
+3. 依存関係のインストール:
+
+```bash
+fvm flutter pub get
+```
+
+4. Widgetbook の起動:
+
+```bash
+fvm flutter run -t lib/main.dart
+```
+
+5. ゴールデンテストの実行:
+
+```bash
+fvm flutter test --update-goldens
+```
+
+## プロジェクト構造
+
+- `lib/`: メインのアプリケーションコード
+- `test/`: テストコードとゴールデンテストの画像
+- `test/goldens/`: ゴールデンテストの参照画像
+- `widgetbook/`: Widgetbook の設定とカタログ
+- `.fvm/`: FVM の設定ファイル
+
+## テストの実行
+
+- 通常のテスト: `fvm flutter test`
+- ゴールデンテストの更新: `fvm flutter test --update-goldens`
+- 特定のテストファイルの実行: `fvm flutter test test/widget_test.dart`
+
+## FVM の使用方法
+
+- Flutter コマンドの実行: `fvm flutter` を使用
+- プロジェクトの Flutter バージョン確認: `fvm flutter --version`
+- 新しい Flutter バージョンのインストール: `fvm install <version>`
+- グローバルな Flutter バージョンの設定: `fvm global <version>`
+
+## 注意事項
+
+- ゴールデンテストを実行する前に、テスト環境が安定していることを確認してください
+- 参照画像は `test/goldens/` ディレクトリに保存されます
+- 新しい UI コンポーネントを追加する際は、必ずテストを追加してください
+- Flutter コマンドを実行する際は、必ず `fvm flutter` を使用してください
+- `.fvm` ディレクトリはバージョン管理に含める必要があります
