@@ -1,5 +1,3 @@
-# Widgetbook Golden Test プロジェクト
-
 ## 概要
 
 このプロジェクトは、Flutter アプリケーションの UI コンポーネントをテストするための環境を提供します。Widgetbook と Alchemist を使用して、UI コンポーネントのビジュアルテスト（ゴールデンテスト）を実行できます。
