@@ -1,5 +1,1 @@
-include: package:pedantic_mono/analysis_options.yaml
-
-analyzer:
-  exclude:
-    - "**/*.stories.book.dart"
+include: package:flutter_lints/flutter.yaml
